@@ -1,21 +1,19 @@
-//
-// Minimal JavaScript for Storefront UI demo
-// Provides basic interaction feedback for "Add to cart" buttons.
-//
-
+// Minimal cart interaction and chip toggles
 document.addEventListener('DOMContentLoaded', () => {
-  // Find all buttons with the class "add-to-cart"
-  const buttons = document.querySelectorAll('.add-to-cart');
-  buttons.forEach((btn) => {
+  const cartCount = document.getElementById('cart-count');
+  let count = 0;
+  document.querySelectorAll('[data-add]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const original = btn.textContent;
-      btn.textContent = 'Added ✓';
-      btn.disabled = true;
-      // After a brief delay revert back to original text
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.disabled = false;
-      }, 2000);
+      count++;
+      if(cartCount) cartCount.textContent = count;
+      const live = document.getElementById('live');
+      if(live) live.textContent = `Added to cart. Total ${count} items.`;
+    });
+  });
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const pressed = chip.getAttribute('aria-pressed') === 'true';
+      chip.setAttribute('aria-pressed', (!pressed).toString());
     });
   });
 });

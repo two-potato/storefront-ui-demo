@@ -1,77 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Storefront UI Demo</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <a href="index.html" class="logo">Storefront</a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="product.html">Products</a>
-      </nav>
-    </header>
-    <section class="hero">
-      <h1>Welcome to our Store</h1>
-      <p>
-        Discover quality products curated just for you. Smooth designs,
-        pleasant colors, and interactive UI to inspire customers.
-      </p>
-      <a href="product.html"
-        ><button class="btn">Shop Now</button></a
-      >
-    </section>
-    <section class="products">
-      <h2>Featured Products</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <div class="image"></div>
-          <h3>Product Name 1</h3>
-          <p>Short description of product 1.</p>
-          <span class="price">€29.99</span>
-          <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="product-card">
-          <div class="image"></div>
-          <h3>Product Name 2</h3>
-          <p>Short description of product 2.</p>
-          <span class="price">€39.99</span>
-          <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="product-card">
-          <div class="image"></div>
-          <h3>Product Name 3</h3>
-          <p>Short description of product 3.</p>
-          <span class="price">€49.99</span>
-          <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="product-card">
-          <div class="image"></div>
-          <h3>Product Name 4</h3>
-          <p>Short description of product 4.</p>
-          <span class="price">€24.99</span>
-          <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="product-card">
-          <div class="image"></div>
-          <h3>Product Name 5</h3>
-          <p>Short description of product 5.</p>
-          <span class="price">€19.99</span>
-          <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="product-card">
-          <div class="image"></div>
-          <h3>Product Name 6</h3>
-          <p>Short description of product 6.</p>
-          <span class="price">€59.99</span>
-          <button class="add-to-cart">Add to cart</button>
-        </div>
-      </div>
-    </section>
-    <footer class="footer">© 2025 Storefront. All rights reserved.</footer>
-    <script src="app.js"></script>
-  </body>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Материальный магазин</title>
+<meta name="description" content="Демонстрация интернет‑магазина с Material 3, доступностью и производительностью"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div id="live" class="sr-only" aria-live="polite"></div>
+<header class="appbar">
+ <div class="container inner">
+  <a class="brand" href="index.html"><img src="logo.svg" alt="Логотип"/><strong>Store M3</strong></a>
+  <label class="search">
+   <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+   <input type="search" placeholder="Поиск" aria-label="Поиск по каталогу"/>
+  </label>
+  <nav class="actions" aria-label="Действия">
+   <button class="icon-btn" title="Избранное" aria-label="Избранное">
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.35-7-10a4 4 0 018-1 4 4 0 018 1c0 5.65-7 10-7 10z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   </button>
+   <a href="product.html" class="icon-btn" title="Карточка товара" aria-label="Карточка товара">
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+   </a>
+  </nav>
+ </div>
+</header>
+<main class="container">
+ <section class="hero">
+  <div class="hero-card">
+   <div>
+    <h1>Тренды дизайна 2025</h1>
+    <p>Материальная база M3, динамические цвета, типографика и доступность — всё, что нужно современному магазину.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+     <a href="#catalog" class="btn primary">Каталог</a>
+     <a href="product.html" class="btn secondary">Карточка</a>
+    </div>
+   </div>
+   <div class="hero-visual">
+    <div class="placeholder"></div>
+    <div class="placeholder"></div>
+    <div class="placeholder"></div>
+    <div class="placeholder"></div>
+   </div>
+  </div>
+ </section>
+ <section id="catalog" aria-labelledby="h-catalog">
+  <div class="section-head">
+   <h2 id="h-catalog">Каталог</h2>
+   <div class="toolbar">
+    <button class="chip" aria-pressed="false">Новинки</button>
+    <button class="chip" aria-pressed="false">Популярное</button>
+    <button class="chip" aria-pressed="false">Скидки</button>
+    <button class="chip" aria-pressed="false">Керамика</button>
+   </div>
+  </div>
+  <div class="grid">
+   <!-- Card 1 -->
+   <article class="card">
+    <div class="media"></div>
+    <div class="body">
+     <div class="meta">В наличии · 4.8★</div>
+     <h3>Кружка матовая 300 мл</h3>
+     <div class="price">2 490 ₽ <small>3 290 ₽</small></div>
+     <div class="tags"><span>m3</span> <span>а11y</span></div>
+     <button class="btn primary" data-add>В корзину</button>
+    </div>
+   </article>
+   <!-- Card 2 -->
+   <article class="card">
+    <div class="media"></div>
+    <div class="body">
+     <div class="meta">Осталось мало · 4.9★</div>
+     <h3>Бокал для вина 450 мл</h3>
+     <div class="price">3 990 ₽</div>
+     <div class="tags"><span>стекло</span> <span>новинка</span></div>
+     <button class="btn primary" data-add>В корзину</button>
+    </div>
+   </article>
+   <!-- Card 3 -->
+   <article class="card">
+    <div class="media"></div>
+    <div class="body">
+     <div class="meta">В наличии · 4.7★</div>
+     <h3>Набор тарелок 6 шт</h3>
+     <div class="price">4 590 ₽</div>
+     <div class="tags"><span>керамика</span></div>
+     <button class="btn primary" data-add>В корзину</button>
+    </div>
+   </article>
+   <!-- Card 4 -->
+   <article class="card">
+    <div class="media"></div>
+    <div class="body">
+     <div class="meta">В наличии · 5.0★</div>
+     <h3>Френч‑пресс 800 мл</h3>
+     <div class="price">3 490 ₽ <small>3 990 ₽</small></div>
+     <div class="tags"><span>стекло</span><span>аксессуар</span></div>
+     <button class="btn primary" data-add>В корзину</button>
+    </div>
+   </article>
+  </div>
+ </section>
+</main>
+<button class="fab" aria-label="Корзина"><span id="cart-count">0</span></button>
+<footer>
+ &copy; 2025 Магазин M3
+</footer>
+<script src="app.js"></script>
+<style>
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+</style>
+</body>
 </html>

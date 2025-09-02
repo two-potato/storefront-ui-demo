@@ -1,40 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product – Storefront</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <a href="index.html" class="logo">Storefront</a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="product.html">Products</a>
-      </nav>
-    </header>
-    <div class="product-container">
-      <div class="product-images">
-        <div class="main-image"></div>
-        <div class="thumbs">
-          <div class="thumb"></div>
-          <div class="thumb"></div>
-          <div class="thumb"></div>
-        </div>
-      </div>
-      <div class="product-details">
-        <h2>Product Name</h2>
-        <span class="price">€29.99</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris
-          purus, bibendum sit amet euismod quis, cursus ut sapien. Cras
-          commodo odio vel libero cursus, non luctus justo ultricies.
-        </p>
-        <button class="add-to-cart">Add to cart</button>
-      </div>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Карточка товара</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div id="live" class="sr-only" aria-live="polite"></div>
+<header class="appbar">
+ <div class="container inner">
+  <a class="brand" href="index.html"><img src="logo.svg" alt="Логотип"/><strong>Store M3</strong></a>
+  <label class="search">
+   <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+   <input type="search" placeholder="Поиск" aria-label="Поиск по каталогу"/>
+  </label>
+  <nav class="actions" aria-label="Навигация">
+   <a href="index.html" class="icon-btn" title="Главная" aria-label="Главная">
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l9-7 9 7v9a2 2 0 01-2 2h-4v-7h-6v7H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+   </a>
+  </nav>
+ </div>
+</header>
+<main class="container">
+ <section style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0;">
+  <div style="border:1px solid color-mix(in oklab,var(--outline),transparent 70%);background:color-mix(in oklab,var(--surface-variant),transparent 75%);border-radius:20px;padding:16px;display:grid;grid-template-columns:1fr 0.35fr;gap:12px;">
+   <div style="border-radius:16px;height:320px;background:color-mix(in oklab,var(--surface-variant),transparent 60%);"></div>
+   <div style="display:grid;gap:12px;">
+    <div style="height:90px;border-radius:12px;background:color-mix(in oklab,var(--surface-variant),transparent 65%);"></div>
+    <div style="height:90px;border-radius:12px;background:color-mix(in oklab,var(--surface-variant),transparent 65%);"></div>
+    <div style="height:90px;border-radius:12px;background:color-mix(in oklab,var(--surface-variant),transparent 65%);"></div>
+   </div>
+  </div>
+  <aside style="border:1px solid color-mix(in oklab,var(--outline),transparent 70%);background:color-mix(in oklab,var(--surface-variant),transparent 80%);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px;">
+   <h1 style="font:var(--text-headline);margin:0;">Кружка матовая 300 мл</h1>
+   <div class="meta">Артикул: MUG-300-MAT · 4.8★ · 126 отзывов</div>
+   <div class="price" style="font-size:28px;">2 490 ₽ <small>3 290 ₽</small></div>
+   <div style="display:flex;gap:12px;align-items:center;">
+    <div style="display:flex;align-items:center;gap:10px;border:1px solid color-mix(in oklab,var(--outline),transparent 60%);border-radius:12px;padding:8px 10px;">
+     <button class="icon-btn" aria-label="Уменьшить количество" style="width:32px;height:32px">−</button>
+     <span>1</span>
+     <button class="icon-btn" aria-label="Увеличить количество" style="width:32px;height:32px">+</button>
     </div>
-    <footer class="footer">© 2025 Storefront. All rights reserved.</footer>
-    <script src="app.js"></script>
-  </body>
+    <button class="btn primary" data-add>Добавить в корзину</button>
+   </div>
+   <ul style="margin:8px 0 0 0;padding-left:20px;color:#6B7280;font-size:14px;">
+    <li>Матовая глазурь, подходит для ПММ</li>
+    <li>Экологичная упаковка</li>
+    <li>Доставка за 1–2 дня</li>
+   </ul>
+  </aside>
+ </section>
+ <section>
+  <div class="section-head">
+   <h2>Похожие товары</h2>
+   <a href="index.html#catalog" class="btn secondary">Все</a>
+  </div>
+  <div class="grid">
+   <article class="card">
+    <div class="media"></div>
+    <div class="body">
+     <div class="meta">В наличии</div>
+     <h3>Кружка графитовая 300 мл</h3>
+     <div class="price">2 390 ₽</div>
+     <button class="btn primary" data-add>В корзину</button>
+    </div>
+   </article>
+   <article class="card">
+    <div class="media"></div>
+    <div class="body">
+     <div class="meta">В наличии</div>
+     <h3>Кружка белая 300 мл</h3>
+     <div class="price">1 990 ₽</div>
+     <button class="btn primary" data-add>В корзину</button>
+    </div>
+   </article>
+   <article class="card">
+    <div class="media"></div>
+    <div class="body">
+     <div class="meta">В наличии</div>
+     <h3>Кружка с блюдцем</h3>
+     <div class="price">3 190 ₽</div>
+     <button class="btn primary" data-add>В корзину</button>
+    </div>
+   </article>
+  </div>
+ </section>
+</main>
+<button class="fab" aria-label="Корзина"><span id="cart-count">0</span></button>
+<footer>
+ &copy; 2025 Магазин M3
+</footer>
+<script src="app.js"></script>
+<style>.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style>
+</body>
 </html>
