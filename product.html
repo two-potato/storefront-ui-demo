@@ -32,17 +32,14 @@
     <div style="height:90px;border-radius:12px;background:color-mix(in oklab,var(--surface-variant),transparent 65%);"></div>
    </div>
   </div>
-  <aside style="border:1px solid color-mix(in oklab,var(--outline),transparent 70%);background:color-mix(in oklab,var(--surface-variant),transparent 80%);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px;">
+   <aside style="border:1px solid color-mix(in oklab,var(--outline),transparent 70%);background:color-mix(in oklab,var(--surface-variant),transparent 80%);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px;" data-sku="MUG-300-MAT" data-name="Кружка матовая 300 мл" data-price="2490">
    <h1 style="font:var(--text-headline);margin:0;">Кружка матовая 300 мл</h1>
    <div class="meta">Артикул: MUG-300-MAT · 4.8★ · 126 отзывов</div>
    <div class="price" style="font-size:28px;">2 490 ₽ <small>3 290 ₽</small></div>
    <div style="display:flex;gap:12px;align-items:center;">
-    <div style="display:flex;align-items:center;gap:10px;border:1px solid color-mix(in oklab,var(--outline),transparent 60%);border-radius:12px;padding:8px 10px;">
-     <button class="icon-btn" aria-label="Уменьшить количество" style="width:32px;height:32px">−</button>
-     <span>1</span>
-     <button class="icon-btn" aria-label="Увеличить количество" style="width:32px;height:32px">+</button>
+    <div class="cart-slot" data-slot="MUG-300-MAT">
+      <button class="btn primary" data-action="add" aria-label="Добавить в корзину">В корзину</button>
     </div>
-    <button class="btn primary" data-add>Добавить в корзину</button>
    </div>
    <ul style="margin:8px 0 0 0;padding-left:20px;color:#6B7280;font-size:14px;">
     <li>Матовая глазурь, подходит для ПММ</li>
@@ -57,31 +54,37 @@
    <a href="index.html#catalog" class="btn secondary">Все</a>
   </div>
   <div class="grid">
-   <article class="card">
+   <article class="card" data-sku="MUG-GRAPHITE-300" data-name="Кружка графитовая 300 мл" data-price="2390">
     <div class="media"></div>
     <div class="body">
      <div class="meta">В наличии</div>
      <h3>Кружка графитовая 300 мл</h3>
      <div class="price">2 390 ₽</div>
-     <button class="btn primary" data-add>В корзину</button>
+     <div class="cart-slot" data-slot="MUG-GRAPHITE-300">
+      <button class="btn primary" data-action="add" aria-label="Добавить в корзину">В корзину</button>
+     </div>
     </div>
    </article>
-   <article class="card">
+   <article class="card" data-sku="MUG-WHITE-300" data-name="Кружка белая 300 мл" data-price="1990">
     <div class="media"></div>
     <div class="body">
      <div class="meta">В наличии</div>
      <h3>Кружка белая 300 мл</h3>
      <div class="price">1 990 ₽</div>
-     <button class="btn primary" data-add>В корзину</button>
+     <div class="cart-slot" data-slot="MUG-WHITE-300">
+      <button class="btn primary" data-action="add" aria-label="Добавить в корзину">В корзину</button>
+     </div>
     </div>
    </article>
-   <article class="card">
+   <article class="card" data-sku="MUG-SAUCER-SET" data-name="Кружка с блюдцем" data-price="3190">
     <div class="media"></div>
     <div class="body">
      <div class="meta">В наличии</div>
      <h3>Кружка с блюдцем</h3>
      <div class="price">3 190 ₽</div>
-     <button class="btn primary" data-add>В корзину</button>
+     <div class="cart-slot" data-slot="MUG-SAUCER-SET">
+      <button class="btn primary" data-action="add" aria-label="Добавить в корзину">В корзину</button>
+     </div>
     </div>
    </article>
   </div>
@@ -92,6 +95,7 @@
  &copy; 2025 Магазин M3
 </footer>
 <script src="app.js"></script>
+<script src="cart-perekrestok.js"></script>
 <style>.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style>
 </body>
 </html>

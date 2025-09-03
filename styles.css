@@ -75,3 +75,36 @@ footer{margin:40px 0;padding:0 0 60px;text-align:center;color:#6B7280;font-size:
 /* Responsive adjustments */
 @media(max-width:900px){.hero-card{grid-template-columns:1fr;}.hero-visual{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.hero-card{padding:24px;} .hero-visual{grid-template-columns:1fr;} .section-head{flex-direction:column;align-items:flex-start;}}
+
+/* Cart controls similar to Perekrestok: minus/plus around quantity */
+.cart-ctrl{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid color-mix(in oklab,var(--outline),transparent 60%);
+  background:color-mix(in oklab,var(--surface-variant),transparent 70%);
+  border-radius:14px;
+  padding:4px 8px;
+}
+.cart-ctrl button{
+  min-width:32px;
+  min-height:32px;
+  border:none;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:var(--primary);
+  color:var(--on-primary);
+  cursor:pointer;
+  box-shadow:var(--elev-1);
+}
+.cart-ctrl button:focus-visible{
+  outline:3px solid #005FCC;
+  outline-offset:2px;
+}
+.cart-ctrl .qty{
+  min-width:24px;
+  text-align:center;
+  font-weight:700;
+  font-size:16px;
+}

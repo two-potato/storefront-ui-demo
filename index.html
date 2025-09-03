@@ -57,47 +57,55 @@
   </div>
   <div class="grid">
    <!-- Card 1 -->
-   <article class="card">
+   <article class="card" data-sku="MUG-300-MAT" data-name="Кружка матовая 300 мл" data-price="2490">
     <div class="media"></div>
     <div class="body">
      <div class="meta">В наличии · 4.8★</div>
      <h3>Кружка матовая 300 мл</h3>
      <div class="price">2 490 ₽ <small>3 290 ₽</small></div>
      <div class="tags"><span>m3</span> <span>а11y</span></div>
-     <button class="btn primary" data-add>В корзину</button>
+     <div class="cart-slot" data-slot="MUG-300-MAT">
+      <button class="btn primary" data-action="add" aria-label="Добавить в корзину">В корзину</button>
+     </div>
     </div>
    </article>
    <!-- Card 2 -->
-   <article class="card">
+   <article class="card" data-sku="GLS-450" data-name="Бокал для вина 450 мл" data-price="3990">
     <div class="media"></div>
     <div class="body">
      <div class="meta">Осталось мало · 4.9★</div>
      <h3>Бокал для вина 450 мл</h3>
      <div class="price">3 990 ₽</div>
      <div class="tags"><span>стекло</span> <span>новинка</span></div>
-     <button class="btn primary" data-add>В корзину</button>
+     <div class="cart-slot" data-slot="GLS-450">
+      <button class="btn primary" data-action="add" aria-label="Добавить в корзину">В корзину</button>
+     </div>
     </div>
    </article>
    <!-- Card 3 -->
-   <article class="card">
+   <article class="card" data-sku="SET-PLATE-6" data-name="Набор тарелок 6 шт" data-price="4590">
     <div class="media"></div>
     <div class="body">
      <div class="meta">В наличии · 4.7★</div>
      <h3>Набор тарелок 6 шт</h3>
      <div class="price">4 590 ₽</div>
      <div class="tags"><span>керамика</span></div>
-     <button class="btn primary" data-add>В корзину</button>
+     <div class="cart-slot" data-slot="SET-PLATE-6">
+      <button class="btn primary" data-action="add" aria-label="Добавить в корзину">В корзину</button>
+     </div>
     </div>
    </article>
    <!-- Card 4 -->
-   <article class="card">
+   <article class="card" data-sku="FRENCH-PRESS-800" data-name="Френч‑пресс 800 мл" data-price="3490">
     <div class="media"></div>
     <div class="body">
      <div class="meta">В наличии · 5.0★</div>
      <h3>Френч‑пресс 800 мл</h3>
      <div class="price">3 490 ₽ <small>3 990 ₽</small></div>
      <div class="tags"><span>стекло</span><span>аксессуар</span></div>
-     <button class="btn primary" data-add>В корзину</button>
+     <div class="cart-slot" data-slot="FRENCH-PRESS-800">
+      <button class="btn primary" data-action="add" aria-label="Добавить в корзину">В корзину</button>
+     </div>
     </div>
    </article>
   </div>
@@ -108,6 +116,7 @@
  &copy; 2025 Магазин M3
 </footer>
 <script src="app.js"></script>
+<script src="cart-perekrestok.js"></script>
 <style>
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 </style>
