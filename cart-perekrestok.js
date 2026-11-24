@@ -7,19 +7,30 @@
   const STORAGE_KEY = 'cart.state.v1';
   const liveRegion = document.getElementById('live');
 
+  const MAX_QUANTITY = 99;
+  const SKU = /^[A-Z0-9-]{1,64}$/;
   // Load cart state from localStorage
   function loadState() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : { items: {} };
+      const parsed = raw ? JSON.parse(raw) : null;
+      const items = Object.create(null);
+      if (!parsed?.items || typeof parsed.items !== 'object' || Array.isArray(parsed.items)) return { items };
+      for (const [sku, item] of Object.entries(parsed.items).slice(0, 100)) {
+        if (!SKU.test(sku) || !item || !Number.isInteger(item.qty) || item.qty < 1 ||
+            item.qty > MAX_QUANTITY || typeof item.name !== 'string' || item.name.length > 200 ||
+            !Number.isFinite(item.price) || item.price < 0) continue;
+        items[sku] = { qty: item.qty, name: item.name, price: item.price };
+      }
+      return { items };
     } catch (e) {
-      return { items: {} };
+      return { items: Object.create(null) };
     }
   }
 
   // Persist cart state to localStorage and broadcast update
   function saveState() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch { /* memory-only cart */ }
     document.dispatchEvent(new CustomEvent('cart:update', { detail: state }));
   }
 
@@ -34,6 +45,7 @@
   // Add one item to cart
   function addOne(sku, meta) {
     const item = state.items[sku] || { qty: 0, name: meta.name || sku, price: meta.price || 0 };
+    if (item.qty >= MAX_QUANTITY) return;
     item.qty += 1;
     state.items[sku] = item;
     saveState();
@@ -81,6 +93,7 @@
     plus.dataset.action = 'plus';
     plus.setAttribute('aria-label', 'Увеличить количество');
     plus.textContent = '+';
+    plus.disabled = qty >= MAX_QUANTITY;
 
     wrapper.appendChild(minus);
     wrapper.appendChild(qtySpan);
@@ -112,6 +125,8 @@
     const qtySpan = slotEl.querySelector('.qty');
     if (qtySpan) {
       qtySpan.textContent = String(qty);
+      const plus = slotEl.querySelector('[data-action="plus"]');
+      if (plus) plus.disabled = qty >= MAX_QUANTITY;
     }
   }
 
@@ -139,6 +154,7 @@
     const slotEl = actionEl.closest('.cart-slot');
     if (!slotEl) return;
     const sku = slotEl.dataset.slot;
+    if (!SKU.test(sku)) return;
     // Find product info from nearest element with data-sku
     const productEl = actionEl.closest('[data-sku]');
     const name = productEl ? (productEl.dataset.name || sku) : sku;

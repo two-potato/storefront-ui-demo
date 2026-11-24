@@ -108,3 +108,7 @@ footer{margin:40px 0;padding:0 0 60px;text-align:center;color:#6B7280;font-size:
   font-weight:700;
   font-size:16px;
 }
+
+.product-detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin:24px 0}
+@media(max-width:680px){.product-detail{grid-template-columns:minmax(0,1fr)}}
+.cart-ctrl button:disabled{opacity:.5;cursor:not-allowed}
